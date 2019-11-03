@@ -45,7 +45,7 @@ if response.status_code == requests.codes.ok:
     # Footer
     with footer:
         with ul():
-            li().add(a('Contribute to this website on Github', href='#'))
+            li().add(a('Contribute to this website on Github', href='https://github.com/WeAreFairphone/fpangels-hp'))
 
 
     with open('index.html', 'w', encoding='utf8') as file:
