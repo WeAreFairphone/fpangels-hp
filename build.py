@@ -17,7 +17,7 @@ if response.status_code == requests.codes.ok:
     # Skeleton
     header = doc.add(header()).add(div(cls='wrapper'))
     map = doc.add(div(cls='map'))
-    list = doc.add(section(cls='wrapper')).add(div(cls='list'))
+    list = doc.add(section(cls='wrapper')).add(div(cls='annotated-list', id='heavens'))
     footer = doc.add(footer()).add(div(cls='wrapper'))
 
     # Header
@@ -32,15 +32,23 @@ if response.status_code == requests.codes.ok:
         """))
 
     # List
-    for heaven in heavens:
-        print(heaven.keys())
-        if 'exists' and 'active' in heaven:
-            with list.add(div(cls='heaven')):
-                div(heaven['country'], cls='country')
-                div(heaven['location'], cls='location')
-                n = len(heaven['angels'])
-                a('📧 Contact {n} 👼 Angel{s}'.format(n=n, s='s' if len(heaven['angels'])>1 else ''),
+    list.add(raw("""
+        <input class="search" placeholder="Search">
+        <button class="sort asc" data-sort="location">Sort by name</button>
+        <button class="sort" data-sort="country">Sort by country</button>"""))
+    with list.add(div(cls='list')):
+        for heaven in heavens:
+            print(heaven.keys())
+            if 'exists' and 'active' in heaven:
+             with div(cls='heaven'):
+               div(heaven['country'], cls='country')
+               div(heaven['location'], cls='location')
+               n = len(heaven['angels'])
+               a('📧 Contact {n} 👼 Angel{s}'.format(n=n, s='s' if len(heaven['angels'])>1 else ''),
                   cls='button btn-angels', data_location=heaven['location'])
+    list.add(raw("""
+        <script src="list.js"></script>
+        <script src="main.js"></script>"""))
 
     # Footer
     with footer:
