@@ -13,6 +13,8 @@ if response.status_code == requests.codes.ok:
         link(rel='stylesheet', href='style.css')
         script(type='text/javascript', src='https://twemoji.maxcdn.com/v/latest/twemoji.min.js', crossorigin='anonymous')
         script(type='text/javascript', src='script.js')
+        meta(name='viewport', content='width=device-width')
+
 
     # Skeleton
     header = doc.add(header()).add(div(cls='wrapper'))
