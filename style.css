@@ -115,3 +115,61 @@ footer ul {
 footer ul > li {
   margin-bottom: 0.5em;
 }
+
+.sort {
+    font-size:12px;
+    font-size:1.2rem;
+    padding:5px 15px;
+    border-radius:25px;
+    border:none;
+    display:inline-block;
+    color:#2e2e2e;
+    text-decoration:none;
+    background-color:rgba(0,0,0,0.05);
+    margin:2px 0
+}.annotated-list
+
+.sort:hover {
+    text-decoration:none;
+    background-color:rgba(0,0,0,0.1)
+}.annotated-list 
+
+.sort:focus {
+    outline:none
+}.annotated-list 
+
+.sort:after {
+    width:0;
+    height:0;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom:4px solid transparent;
+    content:"";
+    position:relative;
+    top:-10px;
+    right:-4px
+}.annotated-list 
+
+.sort.asc:after {
+    width:0;
+    height:0;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-top:4px solid #2e2e2e;
+    content:"";
+    position:relative;
+    top:11px;
+    right:-4px
+}.annotated-list
+ 
+.sort.desc:after {
+    width:0;
+    height:0;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-bottom:4px solid #2e2e2e;
+    content:"";
+    position:relative;
+    top:-9px;
+    right:-4px
+}.nav-tabs
