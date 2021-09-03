@@ -1,10 +1,11 @@
 name: Build and Deploy
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
   schedule:
-    - cron: '17 * * * *'  # every hour at 17 mins (to avoid spikes e.g. at the beginning of each hour)
+    - cron: '17 23 * * *'  # every day at 23:17 (at 17 minutes after full hour to avoid spikes)
 
 jobs:
   build-and-deploy:
