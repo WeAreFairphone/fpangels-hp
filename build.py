@@ -14,6 +14,8 @@ if response.status_code == requests.codes.ok:
         script(type='text/javascript', src='https://unpkg.com/twemoji@latest/dist/twemoji.min.js', crossorigin='anonymous')
         script(type='text/javascript', src='script.js')
         meta(name='viewport', content='width=device-width')
+        a('', rel='me', href='https://social.fairphone.community/@WeAreFairphone')
+
 
 
     # Skeleton
